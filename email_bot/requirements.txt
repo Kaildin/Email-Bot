@@ -1,0 +1,6 @@
+pandas
+python-dotenv
+fastapi
+uvicorn
+deta
+schedule

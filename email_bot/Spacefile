@@ -1,0 +1,15 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: email-bot
+    src: ./
+    engine: python3.9
+    primary: true
+    run: uvicorn main:app
+    actions:
+      - id: "check_send"
+        name: "Check and send"
+        description: "check and sends email if not sent yet, based on the date"
+        trigger: "schedule"
+        # default_interval: "0 10 * * *"
+        default_interval: "0/1 * * * *" 
