@@ -29,10 +29,7 @@ def send_email(subject, email_receiver, gym_owner, gym_name,body):
     msg["BCC"] = sender_email
 
     msg.set_content(body,subtype = "html")
-    # Add the html version.  This converts the message into a multipart/alternative
-    # container, with the original text message as the first part and the new html
-    # message as the second part.
-    # msg.add_alternative()
+
 
     with smtplib.SMTP(EMAIL_SERVER, PORT) as server:
         server.starttls()
@@ -50,7 +47,7 @@ if __name__ == "__main__":
     send_email(
         subject="Invoice Reminder",
         gym_owner="Antonio D'alessandro",
-        email_receiver="thomaxhalfblood@gmail.com",
+        email_receiver="personofinmterest@gmail.com",
         gym_name="New Move",
         body= f"""
                 Salve {gym_owner}, tutto bene?
