@@ -24,13 +24,7 @@ def load_df(url):
     return df    
 
 df = load_df(URL)
-
-# for _, row in df.iterrows():
-#     first_mail_date = datetime.strptime(datetime.strftime((row["DATA_PRIMA_MAIL"]).date(), "%y,%m,%d"), "%y,%m,%d").date()
-#     print(first_mail_date)
-#     print(date.today() == first_mail_date)
    
-
 
 def query_data_and_send_emails(df):
     present = date.today()
@@ -44,24 +38,7 @@ def query_data_and_send_emails(df):
                 gym_name=row["NOME"],
                 gym_owner=row["NOME"],
                 subject = 'Domanda al volo',
-#                 body = f"""\
-# Salve  {row["NOME"]}, tutto bene?
 
-# Sarò diretto, ho controllato la vostra palestra su internet e sarebbe bello lavorare con voi: vi sto rubando del tempo per dirvi che vi aiuteremmo ad avere nuovi clienti. 
-# (sempre se ne avete davvero bisogno).
-
-# Senza dilungarmi inutilmente, avrete nuova clientela a fine del servizio (circa 3 mesi).
-# Acquisiamo i contatti e li tramutiamo in clienti, in maniera automatica.
-
-# La parte più bella è che se non siete soddisfatti del servizio, vi rimborsiamo. Veniamo pagati solo se voi avete nuovi clienti e siete contenti. Alla fine il nostro successo dipende dal vostro.
-
-# Ho un sistema specifico per ottenere questi risultati e sarei davvero contento se avessi l'opportunità di mostrare come funziona, magari in una videochiamata. 
-# Vi piacerebbe l’idea di programmare questa chiamata, senza impegno, anche questa settimana? Se avete spazio per nuovi clienti ovviamente!
-
-
-# Grazie
-
-#                     """, 
                 body= f"""\
                 <html>
                 <body>
@@ -91,16 +68,7 @@ def query_data_and_send_emails(df):
                 gym_name=row["NOME"],
                 gym_owner=row["NOME"],
                 subject = 'Eccoci', 
-#                 body = f"""
-# Ciao row["NOME"], come va ?
 
-# Credo che non ha ancora controllato la prima mail che avevo mandato, spero che possa tornarvi utile, attendo risposta!
-
-# Paolo Ligori. 
-
-# Tel 0621701576
-# atvertextop@gmail.com
-#                     """,
                 body_html = f"""\
                 <html>
                   <body>
@@ -124,18 +92,7 @@ def query_data_and_send_emails(df):
                 gym_name=row["NOME"],
                 gym_owner=row["NOME"],
                 subject = 'informazione per '+ row["NOME"],
-#                 body = f"""
-# Ciao (proprietario), tutto bene ?
 
-# Oltre al caldo torrido mi ci metto anch'io a infastidirla (sperando di no)!
-# Resto qui a sua disposizione!
-
-
-# Paolo Ligori. 
-
-# Tel 0621701576
-# atvertextop@gmail.com               
-#                     """,
                 body = f"""\
                 <html>
                   <body>
@@ -159,14 +116,7 @@ def query_data_and_send_emails(df):
                 gym_name=row["NOME"],
                 gym_owner=row["NOME"],
                 subject = 'Sfruttiamo la situazione a nostro vantaggio!',
-#                 body = f"""
-# Ciao, sono ancora convinto che potremmo lavorare molto bene insieme, perciò voglio insistere chiedendole gentilmente se è interessato a leggere la prima mail che abbiamo inviato
 
-# Paolo Ligori. 
-
-# Tel 0621701576
-# atvertextop@gmail.com              
-#                     """,
                 body = f"""\
                 <html>
                   <body>
@@ -190,17 +140,7 @@ def query_data_and_send_emails(df):
                 gym_name=row["NOME"],
                 gym_owner=row["NOME"],
                 subject = 'ma...',
-#                 body = f"""
-# Ciao (proprietario), come va ?
 
-# è passato un pò di tempo, spero che abbia avuto modo di dare un’ occhiata alla mail.
-# Voglio solo assicurarmi che da ambo le parti non perdiamo un'ottima occasione per migliorare le nostre attività. 
-# Grazie
-# Paolo Ligori. 
-
-# Tel 0621701576
-# atvertextop@gmail.com            
-#                     """,
                 body = f"""\
                 <html>
                   <body>
